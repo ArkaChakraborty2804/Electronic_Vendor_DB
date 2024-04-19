@@ -116,15 +116,15 @@ const pool = mysql.createPool({
   })
 
   router.post('/insertStore', (req, res)=>{
-    const {StoreID, StoreName, StoreType} = req.body;
+    const {StoreID, StoreName, StoreType, Address} = req.body;
     pool.getConnection((err, connection) => {
           if (err) {
             console.error('Error getting connection:', err);
             return res.status(500).json({ message: 'Internal server error' });
           }
       
-          const sql = 'INSERT INTO store VALUES (?, ?, ?)';
-          const values = [StoreID, StoreName, StoreType];
+          const sql = 'INSERT INTO store VALUES (?, ?, ?, ?)';
+          const values = [StoreID, StoreName, StoreType, Address];
       
           connection.query(sql, values, (err, result) => {
             connection.release();

@@ -29,8 +29,8 @@ const pool = mysql.createPool({
             }
       
             console.log('Data fetched successfully:', result);
-            res.status(200).json({msg: "Data fetched successfully"});
-            return result;
+            return res.status(200).json(result);
+            // return result;
           });
         });
   })
@@ -53,8 +53,8 @@ const pool = mysql.createPool({
             }
       
             console.log('Data fetched successfully:', result);
-            res.status(200).json({msg: "Data fetched successfully"});
-            return result;
+            return res.status(200).json(result);
+            // return result;
           });
         });
   })
@@ -77,8 +77,8 @@ const pool = mysql.createPool({
             }
       
             console.log('Data fetched successfully:', result);
-            res.status(200).json({msg: "Data fetched successfully"});
-            return result;
+            return res.status(200).json(result);
+            // return result;
           });
         });
   })
@@ -101,8 +101,8 @@ const pool = mysql.createPool({
             }
       
             console.log('Data fetched successfully:', result);
-            res.status(200).json({msg: "Data fetched successfully"});
-            return result;
+            return res.status(200).json(result);
+            // return result;
           });
         });
   })
@@ -125,8 +125,8 @@ const pool = mysql.createPool({
             }
       
             console.log('Data fetched successfully:', result);
-            res.status(200).json({msg: "Data fetched successfully"});
-            return result;
+            return res.status(200).json(result);
+            // return result;
           });
         });
   })
@@ -149,8 +149,8 @@ const pool = mysql.createPool({
             }
       
             console.log('Data fetched successfully:', result);
-            res.status(200).json({msg: "Data fetched successfully"});
-            return result;
+            return res.status(200).json(result);
+            // return result;
           });
         });
   })
@@ -173,8 +173,8 @@ const pool = mysql.createPool({
             }
       
             console.log('Data fetched successfully:', result);
-            res.status(200).json({msg: "Data fetched successfully"});
-            return result;
+            return res.status(200).json(result);
+            // return result;
           });
         });
   })
@@ -197,8 +197,8 @@ const pool = mysql.createPool({
             }
       
             console.log('Data fetched successfully:', result);
-            res.status(200).json({msg: "Data fetched successfully"});
-            return result;
+            return res.status(200).json(result);
+            // return result;
           });
         });
   })
@@ -221,8 +221,8 @@ const pool = mysql.createPool({
             }
       
             console.log('Data fetched successfully:', result);
-            res.status(200).json({msg: "Data fetched successfully"});
-            return result;
+            return res.status(200).json(result);
+            // return result;
           });
         });
   })
@@ -245,8 +245,8 @@ const pool = mysql.createPool({
             }
       
             console.log('Data fetched successfully:', result);
-            res.status(200).json({msg: "Data fetched successfully"});
-            return result;
+            return res.status(200).json(result);
+            // return result;
           });
         });
   })
@@ -269,8 +269,8 @@ const pool = mysql.createPool({
             }
       
             console.log('Data fetched successfully:', result);
-            res.status(200).json({msg: "Data fetched successfully"});
-            return result;
+            return res.status(200).json(result);
+            // return result;
           });
         });
   })
@@ -293,8 +293,8 @@ const pool = mysql.createPool({
             }
       
             console.log('Data fetched successfully:', result);
-            res.status(200).json({msg: "Data fetched successfully"});
-            return result;
+            return res.status(200).json(result);
+            // return result;
           });
         });
   })
@@ -317,8 +317,8 @@ const pool = mysql.createPool({
             }
       
             console.log('Data fetched successfully:', result);
-            res.status(200).json({msg: "Data fetched successfully"});
-            return result;
+            return res.status(200).json(result);
+            // return result;
           });
         });
   })
