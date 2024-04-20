@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Navbar from './Navbar';
 
 const ViewManufacturer = () => {
   const [manufacturers, setManufacturers] = useState([]);
@@ -18,6 +19,8 @@ const ViewManufacturer = () => {
   }, []);
 
   return (
+    <>
+    <Navbar/>
     <div style={{ minHeight: '100vh', background: 'linear-gradient(to right, #8B5CF6, #3182CE)', fontFamily: 'Arial, sans-serif' }} className="flex items-center justify-center">
       <div style={{ maxWidth: '800px', margin: 'auto', padding: '2rem', borderRadius: '0.5rem', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)', background: 'white' }}>
         <h1 style={{ fontSize: '2.25rem', fontWeight: 'bold', color: '#6B46C1', marginBottom: '2rem' }}>Manufacturers</h1>
@@ -43,6 +46,7 @@ const ViewManufacturer = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

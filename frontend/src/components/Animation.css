@@ -1,0 +1,26 @@
+.animation-container {
+    animation: fadeIn 1s ease; /* Adjust animation properties as needed */
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .animate-text {
+    animation: slideIn 1s ease; /* Adjust animation properties as needed */
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  

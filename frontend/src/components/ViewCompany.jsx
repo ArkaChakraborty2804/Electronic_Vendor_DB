@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Navbar from './Navbar';
 
 const ViewCompany = () => {
   const [companies, setCompanies] = useState([]);
@@ -16,6 +17,8 @@ const ViewCompany = () => {
   }, []);
 
   return (
+    <>
+    <Navbar/>
     <div style={{ minHeight: '100vh', background: 'linear-gradient(to right, #8B5CF6, #3182CE)' }} className="flex items-center justify-center">
       <div style={{ maxWidth: '800px', margin: 'auto', padding: '2rem' }}>
         <h1 style={{ fontSize: '2.25rem', fontWeight: 'bold', color: 'white', marginBottom: '2rem' }}>Companies</h1>
@@ -41,6 +44,7 @@ const ViewCompany = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
