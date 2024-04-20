@@ -45,7 +45,7 @@ const pool = mysql.createPool({
             return res.status(500).json({ message: 'Internal server error' });
           }
       
-          const sql = 'INSERT INTO product (ProductID, CompanyID, ProductName, ProductType, Prices) VALUES (?, ?, ?, ?, ?)';
+          const sql = 'INSERT INTO product (ProductID, CompanyID, ProductName, ProductType, Price) VALUES (?, ?, ?, ?, ?)';
           const values = [ProductID, CompanyID, ProductName, ProductType, Price];
       
           connection.query(sql, values, (err, result) => {

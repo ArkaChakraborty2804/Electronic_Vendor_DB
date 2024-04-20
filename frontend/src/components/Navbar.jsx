@@ -19,7 +19,7 @@ const Navbar = () => {
     <nav style={{ background: 'linear-gradient(to right, #8B5CF6, #3182CE)', color: '#fff', padding: '10px 20px' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div>
-          <h2 style={{ margin: 0 }}>Shopify</h2>
+          <h2 style={{ margin: 0 }}><Link to='/' style={{ textDecoration: 'none', color: 'white', padding: '10px' }}>Shopify</Link></h2>
         </div>
         <div>
           <ul style={{ listStyle: 'none', display: 'flex', margin: 0, padding: 40 }}>
