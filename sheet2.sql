@@ -20,10 +20,9 @@ create table product(
 create table package(
     PackageID VARCHAR(6),
     ProductID VARCHAR(6),
-    CompanyID VARCHAR(6),
     PackageName VARCHAR(50),
-    PRIMARY KEY (PackageID, ProductID, CompanyID),
-    FOREIGN KEY (ProductID, CompanyID) REFERENCES product(ProductID, CompanyID)
+    PRIMARY KEY (PackageID, ProductID),
+    FOREIGN KEY (ProductID) REFERENCES product(ProductID)
 );
 
 create table manufacturer(
@@ -120,6 +119,8 @@ insert into company values
 ('C00003', 'Google'),
 ('C00004', 'Sony');
 
+select * from company;
+
 INSERT INTO product  VALUES
 ('P00001', 'C00001', 'iPhone 12', 'Smartphone', 999.99),
 ('P00002', 'C00001', 'MacBook Pro', 'Laptop', 1499.99),
@@ -130,6 +131,8 @@ INSERT INTO product  VALUES
 ('P00007', 'C00004', 'PlayStation 5', 'Gaming Console', 499.99),
 ('P00008', 'C00004', 'Sony WH-1000XM4', 'Headphones', 349.99),
 ('P00009', 'C00004', 'Sony A7 III', 'Camera', 1999.99);
+
+select * from product;
 
 INSERT INTO manufacturer  VALUES
 ('M00001', 'P00001', 'Apple Inc.'),
@@ -142,10 +145,14 @@ INSERT INTO manufacturer  VALUES
 ('M00008', 'P00008', 'Sony Corporation'),
 ('M00009', 'P00009', 'Sony Corporation');
 
+select * from manufacturer;
+
 insert into store VALUES
 ('S00001', 'DigiMart', 'Offline', 'California'),
 ('S00002', 'DigitalMart', 'Offline', 'Texas'),
 ('S00003', 'ShopStuff', 'Online', NULL);
+
+select * from store;
 
 INSERT INTO storeprod (StoreID, ProductID, Quantity, ManufacturerID) VALUES
 -- Sample data for store S00001 (DigiMart) in California
@@ -168,6 +175,8 @@ INSERT INTO storeprod (StoreID, ProductID, Quantity, ManufacturerID) VALUES
 ('S00003', 'P00007', 6, 'M00007'), -- PlayStation 5
 ('S00003', 'P00008', 7, 'M00008'); -- Sony WH-1000XM4
 
+select * from storeprod;
+
 INSERT INTO cart (CartID, StoreID, ProductID, Quantity) VALUES
 ('CRT001', 'S00001', 'P00001', 3),
 ('CRT001', 'S00001', 'P00002', 1),
@@ -185,6 +194,8 @@ INSERT INTO cart (CartID, StoreID, ProductID, Quantity) VALUES
 ('CRT003', 'S00003', 'P00007', 1),
 ('CRT004', 'S00003', 'P00002', 1);
 
+select * from cart;
+
 INSERT INTO customer (CustomerID, Name, Phone, Address) VALUES
 ('CUS001', 'John Doe', '1234567890', '123 Main St, Anytown, USA'),
 ('CUS002', 'Jane Smith', '9876543210', '456 Elm St, Othertown, USA'),
@@ -192,9 +203,13 @@ INSERT INTO customer (CustomerID, Name, Phone, Address) VALUES
 ('CUS004', 'Emily Brown', '9998887777', '101 Pine St, Somewhere, USA'),
 ('CUS005', 'Michael Wilson', '3334445555', '202 Maple St, Anywhere, USA');
 
+select * from customer;
+
 INSERT INTO contract (ContractID, CustomerID, AccountNumber) VALUES
 ('CON001', 'CUS001', 'ACCT123456'),
 ('CON002', 'CUS002', 'ACCT987654');
+
+select * from contract;
 
 INSERT INTO customerinstance VALUES
 ('ORD001', 'CUS001', 'CRT001'),
@@ -202,14 +217,20 @@ INSERT INTO customerinstance VALUES
 ('ORD003', 'CUS002', 'CRT002'),
 ('ORD004', 'CUS004', 'CRT003');
 
+select * from customerinstance;
+
 INSERT INTO booking VALUES
 ('B00001', 'ORD001', '2024-04-17'),
 ('B00002', 'ORD002', '2024-03-12'),
 ('B00003', 'ORD004', '2024-03-28');
 
+select * from booking;
+
 INSERT INTO shipping VALUES
 ('123456', 'B00002', 'USPS', 'Strait of Panama', NULL, '2024-05-12'),
 ('SHIP001', 'B00003', 'UPS', 'Alabama', '2024-04-14', '2024-04-12');
+
+select * from shipping;
 
 -- Q1a
 SELECT c.CustomerID, c.Name, c.Phone, c.Address
@@ -244,6 +265,8 @@ JOIN (
     GROUP BY sp.StoreID, sp.ProductID
 ) AS shipped ON sp.StoreID = shipped.StoreID AND sp.ProductID = shipped.ProductID
 SET sp.Quantity = sp.Quantity - shipped.TotalQuantity;
+
+select * from storeprod;
 
 INSERT INTO shipping (ShippingID, BookingID, CompanyName, Location, DeliveryDate, Deadline)
 SELECT 'SHIP002', BookingID, CompanyName, "Bay Arizona", DeliveryDate, Deadline

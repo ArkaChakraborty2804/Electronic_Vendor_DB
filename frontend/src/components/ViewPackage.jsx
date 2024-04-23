@@ -30,7 +30,6 @@ const ViewPackage = () => {
               <tr style={{ background: '#6B46C1', color: 'white' }}>
                 <th style={{ padding: '1rem' }}>PackageID</th>
                 <th style={{ padding: '1rem' }}>ProductID</th>
-                <th style={{ padding: '1rem' }}>CompanyID</th>
                 <th style={{ padding: '1rem' }}>PackageName</th>
               </tr>
             </thead>
@@ -39,7 +38,6 @@ const ViewPackage = () => {
                 <tr key={pack.PackageID} style={{ background: '#F3F4F6', color: '#4A5568' }}>
                   <td style={{ border: '1px solid #D1D5DB', padding: '1rem' }}>{pack.PackageID}</td>
                   <td style={{ border: '1px solid #D1D5DB', padding: '1rem' }}>{pack.ProductID}</td>
-                  <td style={{ border: '1px solid #D1D5DB', padding: '1rem' }}>{pack.CompanyID}</td>
                   <td style={{ border: '1px solid #D1D5DB', padding: '1rem' }}>{pack.PackageName}</td>
                 </tr>
               ))}
